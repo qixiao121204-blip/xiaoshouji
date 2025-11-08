@@ -18572,40 +18572,35 @@ body {
 #phone-screen.dark-mode #character-chat-list.list-container {
     background-color: #000000;
 }
-/* AI反查用户手机功能样式 */
-#ai-check-phone-details .form-group {
-    margin-bottom: 15px;
+/* AI手机监控相关样式 */
+#phone-monitor-status p {
+    line-height: 1.6;
+    transition: all 0.3s ease;
 }
-#ai-check-status.active {
-    background-color: #e8f5e9;
-    color: #28a745;
+#phone-monitor-status strong {
+    display: inline-flex;
+    align-items: center;
 }
-#ai-check-status.error {
-    background-color: #f8d7da;
-    color: #dc3545;
+#phone-monitor-status strong::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid currentColor;
+    border-top: none;
+    border-right: none;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+    border-radius: 2px;
 }
-.contact-item {
-    transition: all 0.2s ease;
-    border-radius: 8px;
-    margin-bottom: 2px;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
 }
-.contact-item:hover {
-    background-color: #f0f8ff;
-    transform: translateX(2px);
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+#monitor-error-modal .modal-content {
+    animation: slideIn 0.3s ease;
 }
-.contact-item:active {
-    transform: translateX(0);
-    background-color: #e3f2fd;
-}
-/* 夜间模式适配 */
-#phone-screen.dark-mode .contact-item {
-    background-color: #2c2c2e;
-    border-bottom-color: #38383a;
-}
-#phone-screen.dark-mode .contact-item:hover {
-    background-color: #3a3a3c;
-}
-#phone-screen.dark-mode .contact-item:active {
-    background-color: #48484a;
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
